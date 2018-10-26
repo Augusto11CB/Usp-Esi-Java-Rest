@@ -12,11 +12,11 @@ public class Buscar{
     String[] produtos = new String[10];
     
     public String relacionados(String buscado) {
-        produtos[0] = "coisa";
+        produtos[0] = "Duas COisas";
         if(produtos[0].equals(buscado)){
             return produtos[0];
         }
-        else return "Nao Achei!";
+        else return "Nao Achei Duas vezes!";
 
     }
 
