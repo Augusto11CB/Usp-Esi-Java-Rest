@@ -25,6 +25,12 @@ public class FiltroResource{
     @GetMapping("/{buscar}")
     public String buscar(@PathVariable String buscar){
         b = new Buscar();
+        try{
+            Thread.sleep(5000);
+
+        } catch(Exception e){
+            e.printStackTrace();
+        }
         return b.relacionados(buscar);
     }
 
