@@ -22,8 +22,9 @@ public class FiltroResource{
 
 //    @PostMapping
 //http://localhost:8080/filtros/coisa
-    @GetMapping("/{buscar}")
-    public String buscar(@PathVariable String buscar){
+    @GetMapping("/{buscar}/{pesquisa}")
+    public String buscar(@PathVariable String buscar, @PathVariable String[] pesquisa){
+        // String[] ids = pesquisa.split(",");
         b = new Buscar();
         try{
             Thread.sleep(5000);
@@ -31,9 +32,17 @@ public class FiltroResource{
         } catch(Exception e){
             e.printStackTrace();
         }
-        return b.relacionados(buscar);
+        String superPesquisa = "";
+        for (String p : pesquisa){
+            superPesquisa = superPesquisa + p;
+        }
+        return buscar + superPesquisa;
     }
 
+    @GetMapping("/papagaio/{fala}")
+    public String papagaioFala(@PathVariable String fala){
+        return fala;
+    }
     
     
 
