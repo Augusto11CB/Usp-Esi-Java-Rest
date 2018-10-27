@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
+
 @RestController
 @RequestMapping("/filtros") // "/buscar"
 public class FiltroResource{
@@ -19,6 +20,7 @@ public class FiltroResource{
     //@Autowired
     //private Filtro f;
     private Buscar b;
+    private IndexMannager mIndex = new IndexMannager(7000, 101);
 
 //    @PostMapping
 //http://localhost:8080/filtros/coisa
@@ -43,6 +45,13 @@ public class FiltroResource{
     public String papagaioFala(@PathVariable String fala){
         return fala;
     }
+
+    @GetMapping("/papagaio2/{fala}")
+    public String papagaioFala2(@PathVariable String fala){
+        String resp = JythonComunication.SendToPython(mIndex, fala);
+        return resp;
+    }
+    
     
     
 
