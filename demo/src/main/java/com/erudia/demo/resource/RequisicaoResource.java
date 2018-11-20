@@ -51,6 +51,28 @@ public class RequisicaoResource {
     }
     
 
+    // @GetMapping("/busca/{pesquisa}/{categoria}/{idCliente}/{valormin}/{valormax}/{ordenacao}")
+    // public HashMap<String, Object> buscar(@PathVariable String pesquisa, @PathVariable String categoria, @PathVariable String idCliente , @PathVariable String valormin, @PathVariable String valormax, @PathVariable String ordenacao ) {
+    //     //TODO Parsear Categoria 
+    //     //String entradaDaBusca = "camisa,masculina|moderna|nike,0,2,DESC"
+    //     String entradaDaBusca = pesquisa  + "," + categoria + "," + idCliente + ","  +  valormax  + "," + valormin  + "," + ordenacao;
+    //     String resp = JythonComunication.SendToPython(mIndexBuscar, entradaDaBusca);
+    //     HashMap<String, Object> map = new HashMap<>();
+    //     return null;
+    // }
+
+    // @GetMapping("/maispop")
+    // public HashMap<String, Object> buscarMaisPopulares() {
+    //     String respostaDosPopulares = JythonComunication.SendToPython(mIndexBuscarMaisPopulares, "");
+    //     HashMap<String, Object> map = new HashMap<>();
+    //     return null;
+    // }
+
+    // @GetMapping("/bucarrelacionado/{idCliente}/{idProduto}")
+    // public HashMap<String, Object> recomendacaoDadoProduto(@PathVariable int idCliente, @PathVariable int idProduto) {
+    //     String recomendacaoParaCliente = JythonComunication.SendToPython(mIndexRecomendacao, "" + idCliente + "," + idProduto);
+    //     return null;
+    // }
 
 
 }
