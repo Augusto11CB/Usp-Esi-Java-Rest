@@ -38,7 +38,8 @@ public class JythonComunication {
 			try{
 			return JythonComunication.comunicar(im.getIndex(),"resposta:msg"+msg);
 			}catch(Exception e){
-				System.out.println("COMUNICA��O FALHOU"+im.index);
+				System.out.println("COMUNICACAO FALHOU"+im.index);
+				e.printStackTrace();
 				//im.BackIndex();
 			}
 		}
