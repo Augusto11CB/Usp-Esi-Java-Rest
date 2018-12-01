@@ -30,22 +30,22 @@ public class RequisicaoResource {
         //TODO Parsear Categoria 
         //String entradaDaBusca = "camisa,masculina|moderna|nike,0,2,DESC"
         String entradaDaBusca = pesquisa  + "," + categoria + "," + idCliente + ","  +  valormax  + "," + valormin  + "," + ordenacao;
-        String resp = JythonComunication.SendToPython(mIndexBuscar, entradaDaBusca);
+//        String resp = JythonComunication.SendToPython(mIndexBuscar, entradaDaBusca);
         HashMap<String, Object> map = new HashMap<>();
-        return "{1,2,3,4,5,6,7,8,9,10}";
+        return "{2,3,6,8,10,12,14,15,18,21,22,28,32,45}";
     }
 
     @GetMapping("/maispop")
     public String buscarMaisPopulares() {
-        String respostaDosPopulares = JythonComunication.SendToPython(mIndexBuscarMaisPopulares, "");
+  //      String respostaDosPopulares = JythonComunication.SendToPython(mIndexBuscarMaisPopulares, "");
         HashMap<String, Object> map = new HashMap<>();
-        return "{1,2,3,4,5,6,7,8,9,10}";
+        return "{4,5,6,7,8,10,14,16,20,23,26,27,34,45}";
     }
 
     @GetMapping("/bucarrelacionado/{idCliente}/{idProduto}") //devolve 5 itens
     public String recomendacaoDadoProduto(@PathVariable int idCliente, @PathVariable int idProduto) {
-        String recomendacaoParaCliente = JythonComunication.SendToPython(mIndexRecomendacao, "" + idCliente + "," + idProduto);
-        return "{1,2,3,4,5,6,7,8,9,10}";
+    //    String recomendacaoParaCliente = JythonComunication.SendToPython(mIndexRecomendacao, "" + idCliente + "," + idProduto);
+        return "{1,2,3,5,6,9,10,12,13,17,19,21,32,45}";
     }
 
     @GetMapping("/retornesugestao/{Produto}")
