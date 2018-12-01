@@ -18,8 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RequisicaoResource {
 
     private IndexMannager mIndexBuscar = new IndexMannager(7000, 11);
-    private IndexMannager mIndexBuscarMaisPopulares = new IndexMannager(7103, 11);
-    private IndexMannager mIndexRecomendacao = new IndexMannager(7208, 11);
+    private IndexMannager mIndexBuscarMaisPopulares = new IndexMannager(7100, 11);
+    private IndexMannager mIndexRecomendacao = new IndexMannager(7200, 11);
+    private IndexMannager mIndexRetorneSugestao = new IndexMannager(7300, 11);
     private IndexMannager mTeste = new IndexMannager(7600,11);
 
   //  String resp = JythonComunication.SendToPython(mIndex, fala);
@@ -41,9 +42,15 @@ public class RequisicaoResource {
         return "{1,2,3,4,5,6,7,8,9,10}";
     }
 
-    @GetMapping("/bucarrelacionado/{idCliente}/{idProduto}")
+    @GetMapping("/bucarrelacionado/{idCliente}/{idProduto}") //devolve 5 itens
     public String recomendacaoDadoProduto(@PathVariable int idCliente, @PathVariable int idProduto) {
         String recomendacaoParaCliente = JythonComunication.SendToPython(mIndexRecomendacao, "" + idCliente + "," + idProduto);
+        return "{1,2,3,4,5,6,7,8,9,10}";
+    }
+
+    @GetMapping("/retornesugestao/{Produto}")
+    public String retorneSugestoes(@PathVariable String  Produto) {
+        String recomendacaoParaCliente = JythonComunication.SendToPython(mIndexRetorneSugestao, Produto );
         return "{1,2,3,4,5,6,7,8,9,10}";
     }
 
