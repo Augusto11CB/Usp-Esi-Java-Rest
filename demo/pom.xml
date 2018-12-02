@@ -25,6 +25,40 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+   			<groupId>com.google.guava</groupId>
+    		<artifactId>guava</artifactId>
+    		<version>r05</version>
+		</dependency>
+
+		<dependency>
+    		<groupId>io.springfox</groupId>
+    		<artifactId>springfox-spring-web</artifactId>
+    		<version>2.0.1</version>
+		</dependency>
+
+		<dependency>
+    		<groupId>org.webjars</groupId>
+    		<artifactId>swagger-ui</artifactId>
+    		<version>2.0.12</version>
+		</dependency>
+
+		<dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+
+
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
@@ -49,6 +83,8 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 
 
 </project>
